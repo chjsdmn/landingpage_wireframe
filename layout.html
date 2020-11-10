@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link rel="stylesheet" href="layout.css">
+    <style>
+        *{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    position: relative;
+    min-height: 100vh;    /*must have min!!!! otherwise the height is only the same as screen*/
+}
+#header{
+    background-color: #333;
+    color: #eee;
+    height: 5vh;
+}
+.wrap{
+    margin: 0 auto;
+    width: 80vw;
+    position: relative;
+    height: 100%;   /*has to have height, otherwise no height, is just a line...because child elements are absolute!!!!!*/
+}
+ul{     /*ul has no margin*/
+    list-style: none;
+    margin: 0;
+}
+li{    
+    display: inline-block;
+    margin-left: .2rem;
+}
+a{
+    text-decoration: none;
+}
+#logo a,
+.subNav a{
+    color: #eee;
+}
+.subNav a{
+    font-size: .8rem;
+}
+#logo{
+    position: absolute;
+    padding: .5rem;
+}
+.subNav{
+    position: absolute;
+    margin: 0;
+    top:0;
+    right: 0;
+}
+.banner{   /*div has no margin*/
+    height: 30vh;
+    background-color: #3eb63e;    
+}
+.banner ul{
+    position: absolute;
+    bottom: .8rem;
+    right: 0;
+}
+.banner a{
+    color: #333;
+    padding: .2rem .3rem;
+    background-color: rgba(256,256,256,.3);
+    border:1px solid #333;
+}
+.banner li:nth-child(2) a{  /*a cannot use nth-child...*/
+    padding-top: .8rem;
+    background-color: rgba(256,256,256,.8);
+}
+#mainNav{
+    height: 6vh;
+    border-bottom: solid 1px #bbb;
+    position: relative;
+}
+#mainNav ul{
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+}
+#mainNav li{
+    margin-left: -.25rem;
+    padding: .5rem;
+    border:solid 1px #bbb;
+    border-radius: 10px 10px 0 0;
+    background-color: #ddd;
+    border-bottom: none;
+}
+#mainNav li:first-child{
+    background-color: #fff;
+}
+#mainNav a{
+    color: #333;
+}
+#main{
+    padding-bottom: 5rem;   
+}
+#main .wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.content{
+    flex: 1 1 auto;   
+    padding: 4rem;
+    border: 1px solid #bbb;
+    margin:.5rem .5rem 0 0;
+}
+footer{
+    background-color: #777;
+    color: #eee;
+    padding: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <header id="header">
+        <div class="wrap">
+            <div id="logo"><a href="#"></a>Logo</a></div>
+            <ul class="subNav">
+                <li><a href="#">Github</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="wrap">
+            <ul>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+            </ul>
+        </div>
+    </div>
+    <nav id="mainNav">
+        <div class="wrap">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">PROFILE</a></li>
+                <li><a href="#">ABOUT</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main id="main">
+        <div class="wrap">
+            <div class="content one">Content 1</div>
+            <div class="content two">Content 2</div>
+            <div class="content three">Content 3</div>
+            <div class="content four">Content 4</div>
+            <div class="content five">Content 5</div>
+            <div class="content six">Content 6<br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem aspernatur laudantium tempora nam facere officia natus ipsum vel eum molestias. Ut a, porro pariatur necessitatibus quos dolor voluptate debitis deleniti!</div>
+            <div class="content seven">Content 7</div>
+            <div class="content eight">Content 8</div>
+            <div class="content nine">Content 9<br> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid impedit aliquam consequatur assumenda non fuga adipisci suscipit. Impedit, assumenda quibusdam.</div>
+            <div class="content ten">Content 10</div>
+        </div>
+    </main>
+    <footer>
+        &copy; 2020 HJ.com
+    </footer>
+</div>
+</body>
+</html>
